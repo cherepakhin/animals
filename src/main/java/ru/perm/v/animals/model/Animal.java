@@ -10,9 +10,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Animal {
-
     @Id
-    private Long id = Long.valueOf(0);
+    private Long id = 0L;
     @Column(columnDefinition = "varchar(255) default '-'")
     private String name = "";
 
