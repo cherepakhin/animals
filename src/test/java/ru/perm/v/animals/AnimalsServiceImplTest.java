@@ -16,4 +16,9 @@ class AnimalsServiceImplTest {
     void getAll() {
         assertEquals(3, animalsService.getAll().size());
     }
+
+    @Test
+    void getById() {
+        assertEquals(1L,animalsService.getById(1L).getId());
+    }
 }

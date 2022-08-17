@@ -5,7 +5,6 @@ import org.springframework.stereotype.Service;
 import ru.perm.v.animals.model.Animal;
 
 import java.util.List;
-import java.util.stream.Stream;
 
 import static java.util.Arrays.asList;
 
@@ -26,7 +25,6 @@ public class AnimalsServiceImpl implements AnimalsService {
 
     @Override
     public Animal getById(Long id) {
-        List<Animal> aa = Stream.of(animals).findFirst().get();
-        return null;
+        return animals.stream().filter(a -> a.getId().equals(id)).findFirst().get();
     }
 }
