@@ -1,25 +1,25 @@
 package ru.perm.v.animals;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import ru.perm.v.animals.service.AnimalsService;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import ru.perm.v.animals.service.AnimalService;
 
 @SpringBootTest
-class AnimalsServiceImplTest {
+class AnimalServiceImplTest {
 
     @Autowired
-    AnimalsService animalsService;
+    AnimalService animalService;
 
     @Test
     void getAll() {
-        assertEquals(3, animalsService.getAll().size());
+        assertEquals(3, animalService.getAll().size());
     }
 
     @Test
     void getById() {
-        assertEquals(1L,animalsService.getById(1L).getId());
+        assertEquals(1L, animalService.getById(1L).getId());
     }
 }

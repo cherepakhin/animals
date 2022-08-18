@@ -7,10 +7,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import ru.perm.v.animals.service.AnimalsService;
 import ru.perm.v.animals.model.Animal;
 
 import java.util.List;
+import ru.perm.v.animals.service.AnimalService;
 
 @RestController
 @RequestMapping("/statistic")
@@ -19,16 +19,16 @@ import java.util.List;
 @AllArgsConstructor
 public class AnimalsController {
 
-    private final AnimalsService animalsService;
+    private final AnimalService animalService;
 
     @GetMapping("/")
     public List<Animal> getAll() {
-        return animalsService.getAll();
+        return animalService.getAll();
     }
 
     @GetMapping("/{id}")
     public Animal getById(@PathVariable Long id) {
-        Animal animal = animalsService.getById(id);
+        Animal animal = animalService.getById(id);
         System.out.println(animal);
         return animal;
     }
