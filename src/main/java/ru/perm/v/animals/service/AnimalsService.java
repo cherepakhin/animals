@@ -1,4 +1,4 @@
-package ru.perm.v.animals;
+package ru.perm.v.animals.service;
 
 import java.util.List;
 import ru.perm.v.animals.model.Animal;

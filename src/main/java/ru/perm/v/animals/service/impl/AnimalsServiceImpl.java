@@ -1,13 +1,13 @@
-package ru.perm.v.animals;
+package ru.perm.v.animals.service.impl;
 
 import static java.util.Arrays.asList;
-import static java.util.Collections.sort;
 
 import java.util.Comparator;
 import java.util.List;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import ru.perm.v.animals.model.Animal;
+import ru.perm.v.animals.service.AnimalsService;
 
 @Service
 @Slf4j
