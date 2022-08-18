@@ -20,6 +20,8 @@ public class AnimalServiceImpl implements AnimalService {
 
     @Override
     public Animal getById(Long id) {
-        return null;
+        Animal animal = animalRepository.getById(id);
+        System.out.println(animal);
+        return animal;
     }
 }
