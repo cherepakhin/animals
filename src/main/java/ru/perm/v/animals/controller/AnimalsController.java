@@ -25,7 +25,6 @@ public class AnimalsController {
 
     @GetMapping("/")
     public List<AnimalDto> getAll() {
-        animalService.getAll().stream().map(AnimalDto::new).collect(Collectors.toList());
         return animalService.getAll().stream().map(AnimalDto::new).collect(Collectors.toList());
     }
 
