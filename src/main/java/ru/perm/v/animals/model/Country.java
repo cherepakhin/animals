@@ -3,12 +3,17 @@ package ru.perm.v.animals.model;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import lombok.AllArgsConstructor;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 
 @Entity
+@AllArgsConstructor
+@NoArgsConstructor
+@EqualsAndHashCode
 public class Country {
-
     @Id
-    private Long id = Long.valueOf(0);
+    private Long id = 0L;
     @Column(columnDefinition = "varchar(255) default '-'")
     private String name = "";
 
