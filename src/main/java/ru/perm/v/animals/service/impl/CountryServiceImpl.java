@@ -20,6 +20,8 @@ public class CountryServiceImpl implements CountryService {
 
     @Override
     public Country getById(Long id) {
-        return countryRepository.getById(id);
+        List<Country> countries = countryRepository.findAll();
+        System.out.println(countries);
+        return countryRepository.getOne(id);
     }
 }
