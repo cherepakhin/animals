@@ -7,9 +7,12 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import ru.perm.v.animals.dto.AnimalDto;
 import ru.perm.v.animals.dto.CountryDto;
+import ru.perm.v.animals.model.Animal;
 import ru.perm.v.animals.model.Country;
 import ru.perm.v.animals.service.CountryService;
 
@@ -26,5 +29,10 @@ public class CountryController {
     public List<CountryDto> getAll() {
         List<Country> countries = countryService.getAll();
         return countries.stream().map(CountryDto::new).collect(Collectors.toList());
+    }
+    @GetMapping("/{id}")
+    public CountryDto getById(@PathVariable Long id) {
+        Country country = countryService.getById(id);
+        return new CountryDto(country);
     }
 }

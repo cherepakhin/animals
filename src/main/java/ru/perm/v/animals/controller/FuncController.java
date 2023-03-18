@@ -16,7 +16,7 @@ import java.util.Optional;
 @Slf4j
 @Validated
 public class FuncController {
-    private Function<String, Integer> strToInt = new Function<String, Integer>() {
+    private final Function<String, Integer> strToInt = new Function<String, Integer>() {
         @Override
         public Integer apply(String from) {
             return Integer.parseInt(from);
