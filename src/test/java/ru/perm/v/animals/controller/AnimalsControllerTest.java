@@ -31,7 +31,8 @@ class AnimalsControllerTest {
         animal.setId(ID);
         animal.setName("ANIMAL_10");
         Mockito.when(animalService.getById(ID)).thenReturn(animal);
-        MvcResult mvcResult = mockMvc.perform(get("/animal/"+ID))
+
+        mockMvc.perform(get("/animal/"+ID))
                 .andExpect(jsonPath("$.id").value(ID))
                 .andExpect(jsonPath("$.name").value(NAME))
                 .andExpect(status().isOk())
