@@ -17,4 +17,16 @@ public class StatisticServiceImpl implements StatisticService {
     public List<Statistic> getReport() {
         return repository.findAll();
     }
+
+    @Override
+    public List<Statistic> getReportByAnimal() {
+        //TODO: не сделано getReportByAnimal()
+        return null;
+    }
+
+    @Override
+    public List<Statistic> getReportByCountry() {
+        //TODO: не сделано getReportByCountry() {
+        return null;
+    }
 }
