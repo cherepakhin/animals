@@ -7,11 +7,11 @@ spring:
     url: jdbc:postgresql://localhost:5432/animal
     username: ${PG_USER:postgres}
     password: ${PG_PASSWORD:postgres}
-  # Hibernate ddl auto (create, create-drop, validate, update)
   flyway:
     enabled: true
     #        generate_statistics: true
   jpa:
+    # Hibernate ddl auto (create, create-drop, validate, update)
     #hibernate.ddl-auto: validate
     #hibernate.ddl-auto: create
     properties:
