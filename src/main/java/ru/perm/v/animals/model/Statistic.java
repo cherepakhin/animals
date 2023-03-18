@@ -5,6 +5,9 @@ import lombok.experimental.FieldDefaults;
 
 import javax.persistence.*;
 
+/**
+ * Статистика
+ */
 @Table(name = "statistic")
 @Entity
 @Setter

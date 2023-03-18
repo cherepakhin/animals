@@ -24,14 +24,12 @@ public class StatisticServiceImpl implements StatisticService {
     }
 
     @Override
-    public List<Statistic> getReportByAnimal() {
-        //TODO: не сделано getReportByAnimal()
+    public List<Statistic> getReportByAnimal(Long animalId) {
         return null;
     }
 
     @Override
-    public List<Statistic> getReportByCountry() {
-        //TODO: не сделано getReportByCountry() {
+    public List<Statistic> getReportByCountry(Long countryId) {
         return null;
     }
 

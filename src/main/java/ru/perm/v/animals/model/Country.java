@@ -7,6 +7,9 @@ import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
+/**
+ * Страна
+ */
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor

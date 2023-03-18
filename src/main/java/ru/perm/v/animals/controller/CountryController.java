@@ -16,6 +16,9 @@ import ru.perm.v.animals.model.Animal;
 import ru.perm.v.animals.model.Country;
 import ru.perm.v.animals.service.CountryService;
 
+/**
+ * Страна
+ */
 @RestController
 @RequestMapping("/country")
 @Slf4j
