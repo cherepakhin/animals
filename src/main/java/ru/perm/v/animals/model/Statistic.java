@@ -28,4 +28,14 @@ public class Statistic {
 
     @Column(name = "qty", nullable = false)
     Integer qty = 0;
+
+    @Override
+    public String toString() {
+        return "Statistic{" +
+                "id=" + id +
+                ", country=" + country +
+                ", animal=" + animal +
+                ", qty=" + qty +
+                '}';
+    }
 }
