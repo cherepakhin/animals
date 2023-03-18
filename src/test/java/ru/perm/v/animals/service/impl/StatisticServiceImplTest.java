@@ -22,4 +22,10 @@ class StatisticServiceImplTest {
         assertEquals(6, report.size());
     }
 
+    @Test
+    void findByCountryId() {
+        Long COUNTRY_ID = 1L;
+        List<Statistic> stat = statisticService.findByCountryId(COUNTRY_ID);
+        assertEquals(3, stat.size());
+    }
 }
