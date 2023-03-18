@@ -29,7 +29,7 @@ class AnimalsControllerTest {
         String NAME="ANIMAL_10";
         Animal animal = new Animal();
         animal.setId(ID);
-        animal.setName("ANIMAL_10");
+        animal.setName(NAME);
         Mockito.when(animalService.getById(ID)).thenReturn(animal);
 
         mockMvc.perform(get("/animal/"+ID))
