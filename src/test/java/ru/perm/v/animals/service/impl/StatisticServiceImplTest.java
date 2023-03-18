@@ -28,4 +28,15 @@ class StatisticServiceImplTest {
         List<Statistic> stat = statisticService.findByCountryId(COUNTRY_ID);
         assertEquals(3, stat.size());
     }
+
+    @Test
+    void getdByCountryIdAndAnimalId() {
+        Long COUNTRY_ID = 1L;
+        Long ANIMAL_ID = 2L;
+        List<Statistic> stat = statisticService.getdByCountryIdAndAnimalId(COUNTRY_ID, ANIMAL_ID);
+        assertEquals(1, stat.size());
+        assertEquals(COUNTRY_ID, stat.get(0).getCountry().getId());
+        assertEquals(ANIMAL_ID, stat.get(0).getAnimal().getId());
+        assertEquals(50, stat.get(0).getQty());
+    }
 }

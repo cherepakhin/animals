@@ -9,5 +9,6 @@ public interface StatisticService {
     List<Statistic> findByCountryId(Long id);
     List<Statistic> getReportByAnimal();
     List<Statistic> getReportByCountry();
+    List<Statistic> getdByCountryIdAndAnimalId(Long countryId, Long animalId);
 
 }

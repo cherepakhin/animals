@@ -9,6 +9,7 @@ import java.util.List;
 @Repository
 public interface StatisticRepository extends JpaRepository<Statistic, Long> {
     List<Statistic> findByCountryId(Long id);
+    List<Statistic> findByCountryIdAndAnimalId(Long countryId, Long animalId);
 }
 
 
