@@ -34,6 +34,8 @@ flyway:
 - REST клиент для внешнего сервиса
 - Даты, Calendar 
 - Behave тесты
-- 
+- Liquibase
+- gradle
+- Kafka
 
 

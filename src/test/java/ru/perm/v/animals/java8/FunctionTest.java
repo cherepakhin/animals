@@ -3,6 +3,7 @@ package ru.perm.v.animals.java8;
 import org.junit.jupiter.api.Test;
 import org.springframework.core.convert.converter.Converter;
 
+import java.util.function.BiFunction;
 import java.util.function.Function;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -55,6 +56,12 @@ public class FunctionTest {
     }
 
     @Test
+    void testFuncAndTwoParam() {
+        BiFunction<String, Integer, Character> charAtFunction = (string, index) -> string.charAt(index);
+        assertEquals('2', charAtFunction.apply("123",1));
+    }
+
+    @Test
     void showDoubleColon() {
         Converter<String, Integer> converterStrToInt = Integer::valueOf;
         assertEquals(123, converterStrToInt.convert("123"));
@@ -62,8 +69,8 @@ public class FunctionTest {
 
     @Test
     void showFunctionalInterfaceSimple() {
-        // Назначил функцию  ЕДИНСТВЕННОМУ методу интерфейса и ТУТ ЖЕ создал экземпляр нового класса
-        // Исользовано "::"
+        // Назначил функцию  ЕДИНСТВЕННОМУ методу интерфейса и ТУТ ЖЕ создается экземпляр нового класса
+        // т.к. ИСПОЛЬЗОВАНО "::" , т.к. параметры и результат сопадают и их можно не повтрять
         FunctionalInterfaceSimple<String, Integer> converterStrToInt = Integer::valueOf;
         assertEquals(123, converterStrToInt.convertFromTo("123"));
     }
@@ -74,16 +81,21 @@ public class FunctionTest {
         Function<String, String> f2 = s -> s + "2";
         Function<String, String> f3 = s -> s + "3";
         Function<String, String> f_end = s -> s + "End";
+        Function<String, String> f_middle = s -> s + "Middle";
 
         // К параметру в apply применить от f1 до f3
         // В нормальном, ПРЯМОМ направлении
         assertEquals("Apply123End", f1.andThen(f2).andThen(f3).andThen(f_end).apply("Apply"));
-        assertEquals("ApplyEnd12", f1.andThen(f2).compose(f_end).apply("Apply"));
+        assertEquals("ApplyMiddleEnd123",
+                f1.andThen(f2).compose(f_end).andThen(f3).compose(f_middle).apply("Apply"));
 
         // К параметру в apply применить от f3 до f1.
         // Именно в ОБРАТНОМ направлении!
         assertEquals("Compose321", f1.compose(f2).compose(f3).apply("Compose"));
+    }
 
+    @Test
+    void showFuncInterface() {
         // input: String, result: Integer
         // parseInputStrAndAddToInt100 это ФУНКЦИЯ
         Function<String, Integer> parseInputStr_And_AddInt100 = s -> 100 + Integer.parseInt(s);
