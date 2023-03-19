@@ -12,15 +12,15 @@ import ru.perm.v.animals.service.CountryService;
 
 import static org.mockito.Mockito.mock;
 
-@WebMvcTest(CountryController.class)
-public class CountryControllerTest {
+@WebMvcTest(CountryRestController.class)
+public class CountryRestControllerTest {
     @Autowired
     private MockMvc mockMvc;
 
     @Test
     public void getById() {
         CountryService countryService = mock(CountryService.class);
-        CountryController countryController = new CountryController(countryService);
+        CountryRestController countryController = new CountryRestController(countryService);
         Country country = new Country();
         Long COUNTRY_ID = 10L;
         country.setId(COUNTRY_ID);

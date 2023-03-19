@@ -24,7 +24,7 @@ import ru.perm.v.animals.service.CountryService;
 @Slf4j
 @Validated
 @AllArgsConstructor
-public class CountryController {
+public class CountryRestController {
 
     private CountryService countryService;
 
