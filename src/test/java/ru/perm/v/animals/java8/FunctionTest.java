@@ -29,9 +29,9 @@ public class FunctionTest {
     }
 
     @Test
-    void funcTestPointerTwoParam() {
-        int radix = 16;
-        Function<String, Integer> strToIntStrelka = s -> Integer.parseInt(s, radix);
+    void funcTestPointeraAndOutVar() {
+        int radixOutVar = 16;
+        Function<String, Integer> strToIntStrelka = s -> Integer.parseInt(s, radixOutVar);
         assertEquals(255, strToIntStrelka.apply("FF"));
     }
 
@@ -69,17 +69,24 @@ public class FunctionTest {
 
     @Test
     void showFunctionalInterfaceSimple() {
-        // Назначил функцию  ЕДИНСТВЕННОМУ методу интерфейса и ТУТ ЖЕ создается экземпляр нового класса
-        // ИСПОЛЬЗОВАНО "::", т.к. параметры и результат совпадают и их можно не повторять
+        // Назначил функцию  ЕДИНСТВЕННОМУ методу интерфейса convertFromTo
+        // и ТУТ ЖЕ создается экземпляр нового класса
+        // ИСПОЛЬЗОВАНО "::", т.к. параметры и результат совпадают, то их можно не повторять
         FunctionalInterfaceSimple<String, Integer> converterStrToInt = Integer::valueOf;
         assertEquals(123, converterStrToInt.convertFromTo("123"));
     }
 
     @Test
+    void showFuncInterface() {
+        // input: String, result: Integer
+        // parseInputStrAndAddToInt100 это ФУНКЦИЯ
+        Function<String, Integer> parseInputStr_And_AddInt100 = s -> 100 + Integer.parseInt(s);
+        // Применение назначенного метода через apply()
+        assertEquals(102, parseInputStr_And_AddInt100.apply("2"));
+    }
+
+    @Test
     void showFunction_AndThen_AndCompose() {
-//        Function<String, String> f1 = s -> "1" + s;
-//        Function<String, String> f2 = s -> "2" + s;
-//        Function<String, String> f3 = s -> "3" + s;
         Function<String, String> f1 = s -> s + "1";
         Function<String, String> f2 = s -> s + "2";
         Function<String, String> f3 = s -> s + "3";
@@ -99,12 +106,4 @@ public class FunctionTest {
 
     }
 
-    @Test
-    void showFuncInterface() {
-        // input: String, result: Integer
-        // parseInputStrAndAddToInt100 это ФУНКЦИЯ
-        Function<String, Integer> parseInputStr_And_AddInt100 = s -> 100 + Integer.parseInt(s);
-        // Применение назначенного метода через apply()
-        assertEquals(102, parseInputStr_And_AddInt100.apply("2"));
-    }
 }

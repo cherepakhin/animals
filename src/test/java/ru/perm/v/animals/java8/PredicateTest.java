@@ -4,16 +4,16 @@ import org.junit.jupiter.api.Test;
 
 import java.util.function.Predicate;
 
-import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 /**
  * Шпаргалка по java8
- *
+ * <p>
  * Predicate
  * Принимает на вход значение и возвращает boolean значение в качестве результата.
- * @FunctionalInterface
- * public interface Predicate<T> {
+ * Называется Predicate, т.к. возвращает BOOLEAN(!)
+ *
+ * @FunctionalInterface public interface Predicate<T> {
  * boolean test(T t);
  * }
  */
@@ -26,6 +26,9 @@ public class PredicateTest {
         assertTrue(isNegative.test(-6));
     }
 
+    /**
+     * Вложенный Predicate
+     */
     @Test
     void useAndOr() {
         Predicate<Integer> isLess100 = i -> i < 100;
