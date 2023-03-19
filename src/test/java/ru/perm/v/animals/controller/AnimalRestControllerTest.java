@@ -14,7 +14,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @WebMvcTest(AnimalRestController.class)
-class AnimalControllerTest {
+class AnimalRestControllerTest {
     @Autowired
     private MockMvc mockMvc;
     @MockBean
