@@ -23,20 +23,13 @@ public class StatisticServiceImpl implements StatisticService {
         return repository.findByCountryId(id);
     }
 
-    //TODO getReportByAnimal(Long animalId)
     @Override
-    public List<Statistic> getReportByAnimal(Long animalId) {
-        return null;
-    }
-
-    //TODO getReportByCountry(Long countryId)
-    @Override
-    public List<Statistic> getReportByCountry(Long countryId) {
-        return null;
+    public List<Statistic> findByAnimalId(Long animalId) {
+        return repository.findByAnimalId(animalId);
     }
 
     @Override
-    public List<Statistic> getdByCountryIdAndAnimalId(Long countryId, Long animalId) {
+    public List<Statistic> findByCountryIdAndAnimalId(Long countryId, Long animalId) {
         return repository.findByCountryIdAndAnimalId(countryId, animalId);
     }
 }

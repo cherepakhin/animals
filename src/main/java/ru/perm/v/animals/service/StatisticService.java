@@ -21,17 +21,11 @@ public interface StatisticService {
     List<Statistic> findByCountryId(Long id);
 
     /**
-     * В сколько и каких живет животное
+     * Какие животные и сколько живет в стране
+     * @param animalId ид страны
      * @return статистика
      */
-    List<Statistic> getReportByAnimal(Long animalId);
-
-    /**
-     * Какие животные и сколько живет в стране
-     * @param countryId ид страны
-     * @return список животных
-     */
-    List<Statistic> getReportByCountry(Long countryId);
+    List<Statistic> findByAnimalId(Long animalId);
 
     /**
      * Сколько животных живет в стране с id животного и id страны
@@ -39,6 +33,6 @@ public interface StatisticService {
      * @param animalId ид животного
      * @return статистика
      */
-    List<Statistic> getdByCountryIdAndAnimalId(Long countryId, Long animalId);
+    List<Statistic> findByCountryIdAndAnimalId(Long countryId, Long animalId);
 
 }

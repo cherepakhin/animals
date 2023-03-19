@@ -24,6 +24,13 @@ public interface StatisticRepository extends JpaRepository<Statistic, Long> {
      * @return статистика
      */
     List<Statistic> findByCountryIdAndAnimalId(Long countryId, Long animalId);
+
+    /**
+     * Статистика по id животного.
+     * @param animalId
+     * @return
+     */
+    List<Statistic> findByAnimalId(Long animalId);
 }
 
 
