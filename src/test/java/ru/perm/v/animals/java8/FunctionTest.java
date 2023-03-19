@@ -47,24 +47,11 @@ public class FunctionTest {
     }
 
     @Test
-    void funcParamResult() {
+    void testFuncAndParam() {
         // input: Integer, result: String
         Function<Integer, String> fIntToStr = inputInt -> "Result" + inputInt;
         assertEquals("Result100", fIntToStr.apply(100));
 
-        Function<String, String> f1 = s -> "1" + s;
-        Function<String, String> f2 = s -> "2" + s;
-        assertEquals("12Compose", f1.compose(f2)
-                .apply("Compose"));
-        assertEquals("21AndThen", f1.andThen(f2)
-                .apply("AndThen"));
-
-
-        // input: String, result: Integer
-        // parseInputStrAndAddToInt100 это ФУНКЦИЯ
-        Function<String, Integer> parseInputStrAndAddToInt100 = s -> 100 + Integer.parseInt(s);
-        // Применение назначенного метода через apply()
-        assertEquals(102, parseInputStrAndAddToInt100.apply("2"));
     }
 
     @Test
@@ -82,19 +69,24 @@ public class FunctionTest {
     }
 
     @Test
-    void showFunctionAndThen_AndCompose() {
-//        Function<String, String> f2 = s -> "2"+ s;
-//        Function<String, String> f3 = s -> "3"+ s;
-//        Function<String, String> f4 = s -> "4"+ s;
-//        assertEquals("12Compose", f1.compose(f2)
-//                .apply("Compose"));
+    void showFunction_AndThen_AndCompose() {
+        Function<String, String> f1 = s -> s + "1";
+        Function<String, String> f2 = s -> s + "2";
+        Function<String, String> f3 = s -> s + "3";
+        Function<String, String> f_end = s -> "End" + s;
 
+        // К параметру в apply применить от f1 до f3
+        // В нормальном, ПРЯМОМ направлении
+        assertEquals("AndThen123", f1.andThen(f2).andThen(f3).apply("AndThen"));
 
-//        Function<String, String> f3 = s -> "3"+ s;
-//        Function<String, String> f4 = s -> "4"+ s;
-//        assertEquals("1234Compose", f1.compose(f2).compose(f3).compose(f4)
-//                .apply("Compose"));
-//        assertEquals("4321AndThen", f1.andThen(f2).andThen(f3).andThen(f4)
-//                .apply("AndThen"));
+        // К параметру в apply применить от f3 до f1.
+        // Именно в ОБРАТНОМ направлении!
+        assertEquals("Compose321", f1.compose(f2).compose(f3).apply("Compose"));
+
+        // input: String, result: Integer
+        // parseInputStrAndAddToInt100 это ФУНКЦИЯ
+        Function<String, Integer> parseInputStr_And_AddInt100 = s -> 100 + Integer.parseInt(s);
+        // Применение назначенного метода через apply()
+        assertEquals(102, parseInputStr_And_AddInt100.apply("2"));
     }
 }
