@@ -50,19 +50,19 @@ public class FunctionTest {
     @Test
     void testFuncAndParam() {
         // input: Integer, result: String
-        Function<Integer, String> fIntToStr = inputInt -> "Result" + inputInt;
-        assertEquals("Result100", fIntToStr.apply(100));
-
+        Function<Integer, String> fIntToStr = inputInt -> "RESULT:" + inputInt;
+        assertEquals("RESULT:100", fIntToStr.apply(100));
     }
 
     @Test
-    void testFuncAndTwoParam() {
+    void testBiFunction() {
         BiFunction<String, Integer, Character> charAtFunction = (string, index) -> string.charAt(index);
         assertEquals('2', charAtFunction.apply("123",1));
     }
 
     @Test
     void showDoubleColon() {
+        // "Converter" из SpringFrameWork
         Converter<String, Integer> converterStrToInt = Integer::valueOf;
         assertEquals(123, converterStrToInt.convert("123"));
     }
@@ -70,7 +70,7 @@ public class FunctionTest {
     @Test
     void showFunctionalInterfaceSimple() {
         // Назначил функцию  ЕДИНСТВЕННОМУ методу интерфейса и ТУТ ЖЕ создается экземпляр нового класса
-        // т.к. ИСПОЛЬЗОВАНО "::" , т.к. параметры и результат сопадают и их можно не повтрять
+        // ИСПОЛЬЗОВАНО "::", т.к. параметры и результат совпадают и их можно не повторять
         FunctionalInterfaceSimple<String, Integer> converterStrToInt = Integer::valueOf;
         assertEquals(123, converterStrToInt.convertFromTo("123"));
     }
