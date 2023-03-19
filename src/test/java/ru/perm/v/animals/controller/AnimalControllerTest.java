@@ -13,8 +13,8 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-@WebMvcTest(AnimalsController.class)
-class AnimalsControllerTest {
+@WebMvcTest(AnimalRestController.class)
+class AnimalControllerTest {
     @Autowired
     private MockMvc mockMvc;
     @MockBean

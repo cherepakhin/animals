@@ -19,7 +19,7 @@ import ru.perm.v.animals.service.AnimalService;
 @Slf4j
 @Validated
 @AllArgsConstructor
-public class AnimalsController {
+public class AnimalRestController {
 
     private final AnimalService animalService;
 
