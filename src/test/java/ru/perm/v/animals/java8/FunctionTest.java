@@ -73,11 +73,12 @@ public class FunctionTest {
         Function<String, String> f1 = s -> s + "1";
         Function<String, String> f2 = s -> s + "2";
         Function<String, String> f3 = s -> s + "3";
-        Function<String, String> f_end = s -> "End" + s;
+        Function<String, String> f_end = s -> s + "End";
 
         // К параметру в apply применить от f1 до f3
         // В нормальном, ПРЯМОМ направлении
-        assertEquals("AndThen123", f1.andThen(f2).andThen(f3).apply("AndThen"));
+        assertEquals("Apply123End", f1.andThen(f2).andThen(f3).andThen(f_end).apply("Apply"));
+        assertEquals("ApplyEnd12", f1.andThen(f2).compose(f_end).apply("Apply"));
 
         // К параметру в apply применить от f3 до f1.
         // Именно в ОБРАТНОМ направлении!
