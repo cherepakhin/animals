@@ -4,6 +4,9 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * Просто тренировка Function
+ */
 class FuncControllerTest {
 
     @Test
@@ -17,6 +20,13 @@ class FuncControllerTest {
         Function<String, Integer> strToInt1 = Integer::parseInt;
         assertEquals(222, strToInt1.apply("222"));
     }
+
+    @Test
+    void funtTestPointer() {
+        Function<String, Integer> myStrToInt = s -> Integer.parseInt(s);
+        assertEquals(222, myStrToInt.apply("222"));
+    }
+
 
 //    @Test
 //    void convertToIntWithFunction() {

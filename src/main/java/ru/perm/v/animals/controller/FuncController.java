@@ -11,6 +11,9 @@ import ru.perm.v.animals.model.Animal;
 
 import java.util.Optional;
 
+/**
+ * Просто тренировка Function
+ */
 @RestController
 @RequestMapping("/func")
 @Slf4j
