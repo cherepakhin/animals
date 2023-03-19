@@ -77,21 +77,26 @@ public class FunctionTest {
 
     @Test
     void showFunction_AndThen_AndCompose() {
+//        Function<String, String> f1 = s -> "1" + s;
+//        Function<String, String> f2 = s -> "2" + s;
+//        Function<String, String> f3 = s -> "3" + s;
         Function<String, String> f1 = s -> s + "1";
         Function<String, String> f2 = s -> s + "2";
         Function<String, String> f3 = s -> s + "3";
+        Function<String, String> f4 = s -> s + "4";
         Function<String, String> f_end = s -> s + "End";
         Function<String, String> f_middle = s -> s + "Middle";
 
         // К параметру в apply применить от f1 до f3
         // В нормальном, ПРЯМОМ направлении
         assertEquals("Apply123End", f1.andThen(f2).andThen(f3).andThen(f_end).apply("Apply"));
-        assertEquals("ApplyMiddleEnd123",
-                f1.andThen(f2).compose(f_end).andThen(f3).compose(f_middle).apply("Apply"));
-
         // К параметру в apply применить от f3 до f1.
         // Именно в ОБРАТНОМ направлении!
         assertEquals("Compose321", f1.compose(f2).compose(f3).apply("Compose"));
+        // Все вместе. Сначала compose справа налево, затем ВСЕ andThen слева направо
+        assertEquals("ApplyMiddleEnd1234",
+                f1.andThen(f2).compose(f_end).andThen(f3).compose(f_middle).andThen(f4).apply("Apply"));
+
     }
 
     @Test
