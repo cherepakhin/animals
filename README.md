@@ -22,5 +22,18 @@ mvn flyway:migrate -Dflyway.user=postgres -Dflyway.password=postgres -Dflyway.ur
 flyway:
     enabled: true
 ````
+Вспомнить java. Написать сервис:
+- maven (+)
+- с REST API (+)
+- Swagger или OpenApi 
+- с подключением БД Postges (+)
+- кешем для REST
+- Упаковать в Docker
+- UUID
+- Очереди
+- REST клиент для внешнего сервиса
+- Даты, Calendar 
+- Behave тесты
+- 
 
 
