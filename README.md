@@ -22,6 +22,35 @@ mvn flyway:migrate -Dflyway.user=postgres -Dflyway.password=postgres -Dflyway.ur
 flyway:
     enabled: true
 ````
+
+### Работа с psql 
+
+Из linux! Выполнять из консоли компа с postgres
+````shell
+sudo -u postgres psql
+psql>\c animal
+animal>\dt
+                 List of relations
+ Schema |         Name          | Type  |  Owner   
+--------+-----------------------+-------+----------
+ public | animal                | table | postgres
+ public | country               | table | postgres
+ public | flyway_schema_history | table | postgres
+ public | statistic             | table | postgres
+(4 rows)
+````
+
+С удаленного компьютера
+````shell
+psql -U postgres -p 5432 -h 192.168.1.20
+psql>\c animal
+animal>\dt
+                 List of relations
+ Schema |         Name          | Type  |  Owner   
+--------+-----------------------+-------+----------
+....
+````
+
 Вспомнить java. Написать сервис:
 - maven (+)
 - с REST API (+)
