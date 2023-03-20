@@ -1,6 +1,22 @@
 ## Animals
 
 Простой проект на java и с базой Postgres
+Цель написать сервис с:
+- maven (+)
+- с REST API (+)
+- Swagger или OpenApi
+- с подключением БД Postges (+)
+- кешем для REST
+- Упаковать в Docker
+- UUID
+- Очереди
+- REST клиент для внешнего сервиса
+- Даты, Calendar
+- Behave тесты (jbehave, RestAssured)
+- Flyway (+)
+- gradle
+- Kafka
+- Code coverage jacoco
 
 ### База данных
 
@@ -53,20 +69,18 @@ animal>\dt
 ....
 ````
 
-Вспомнить java. Написать сервис:
-- maven (+)
-- с REST API (+)
-- Swagger или OpenApi 
-- с подключением БД Postges (+)
-- кешем для REST
-- Упаковать в Docker
-- UUID
-- Очереди
-- REST клиент для внешнего сервиса
-- Даты, Calendar 
-- Behave тесты (jbehave, RestAssured)
-- Flyway (+)
-- gradle
-- Kafka
-- Code coverage jacoco
+### Actuator
 
+Доступен по адресу http :8781/actuator/
+
+### OpenApi/Swagger
+
+Api-docs доступен по адресу [http://127.0.0.1:8080/api/api-docs](http://127.0.0.1:8080/api/api-docs)
+OpenApi/Swagger по адресу [http://127.0.0.1:8080/api/swagger-ui/index.html](http://127.0.0.1:8080/api/swagger-ui/index.html)
+
+Настройка путей в application.yaml
+```yaml
+springdoc:
+  api-docs:
+    path: /api-docs
+```

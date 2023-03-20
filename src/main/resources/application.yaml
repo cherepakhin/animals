@@ -9,7 +9,7 @@ spring:
     password: ${PG_PASSWORD:postgres}
   flyway:
     enabled: true
-    #        generate_statistics: true
+    generate_statistics: true
   jpa:
     # Hibernate ddl auto (create, create-drop, validate, update)
     #hibernate.ddl-auto: validate
@@ -23,3 +23,38 @@ spring:
 server:
   servlet:
     context-path: /api
+  port: ${API_PORT:8780}
+
+springdoc:
+  version: '@springdoc.version@'
+  swagger-ui:
+    display-request-duration: true
+    groups-order: DESC
+    operationsSorter: method
+    disable-swagger-default-url: true
+    use-root-path: true
+  show-actuator: true
+
+management:
+  health:
+    probes:
+      enabled: true
+  endpoint:
+    metrics:
+      enabled: true
+    prometheus:
+      enabled: true
+    health:
+      show-details: always
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+      base-path: "/actuator"
+  metrics:
+    export:
+      prometheus:
+        enabled: true
+  server:
+    port: 8781
