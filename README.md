@@ -4,7 +4,7 @@
 Цель написать сервис с:
 - maven (+)
 - с REST API (+)
-- Swagger или OpenApi
+- Swagger или OpenApi (+)
 - с подключением БД Postges (+)
 - кешем для REST
 - Упаковать в Docker
@@ -75,6 +75,7 @@ animal>\dt
 
 ### OpenApi/Swagger
 
+(С версией spring 2.5.6 не работает swagger, openapi, поэтому версия spring-boot 2.7.5)
 Api-docs доступен по адресу [http://127.0.0.1:8080/api/api-docs](http://127.0.0.1:8080/api/api-docs)
 OpenApi/Swagger по адресу [http://127.0.0.1:8080/api/swagger-ui/index.html](http://127.0.0.1:8080/api/swagger-ui/index.html)
 
