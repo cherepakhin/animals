@@ -64,8 +64,8 @@ animal>\dt
 - Очереди
 - REST клиент для внешнего сервиса
 - Даты, Calendar 
-- Behave тесты
-- Liquibase
+- Behave тесты (jbehave, RestAssured)
+- Flyway (+)
 - gradle
 - Kafka
 
