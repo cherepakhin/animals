@@ -7,6 +7,7 @@
 - Swagger или OpenApi (+)
 - с подключением БД Postges (+)
 - Flyway (+)
+- Code coverage jacoco (+)
 - кешем для REST
 - Упаковать в Docker
 - UUID
@@ -16,7 +17,6 @@
 - Behave тесты (jbehave, RestAssured)
 - gradle
 - Kafka
-- Code coverage jacoco
 
 ### База данных
 
@@ -88,3 +88,10 @@ springdoc:
   api-docs:
     path: /api-docs
 ```
+
+### Покрытие тестами
+
+Использован jacoco. Отчет генерируется автоматически при сборке (mvn package) и результаты будут в папке
+[target/site/jacoco/index.html](./target/site/jacoco/index.html)
+
+![jacoco](doc/jacoco.png)
