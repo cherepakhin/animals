@@ -68,5 +68,5 @@ animal>\dt
 - Flyway (+)
 - gradle
 - Kafka
-
+- Code coverage jacoco
 
