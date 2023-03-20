@@ -6,6 +6,7 @@
 - с REST API (+)
 - Swagger или OpenApi (+)
 - с подключением БД Postges (+)
+- Flyway (+)
 - кешем для REST
 - Упаковать в Docker
 - UUID
@@ -13,7 +14,6 @@
 - REST клиент для внешнего сервиса
 - Даты, Calendar
 - Behave тесты (jbehave, RestAssured)
-- Flyway (+)
 - gradle
 - Kafka
 - Code coverage jacoco
@@ -75,9 +75,11 @@ animal>\dt
 
 ### OpenApi/Swagger
 
-(С версией spring 2.5.6 не работает swagger, openapi, поэтому версия spring-boot 2.7.5)
-Api-docs доступен по адресу [http://127.0.0.1:8080/api/api-docs](http://127.0.0.1:8080/api/api-docs)
-OpenApi/Swagger по адресу [http://127.0.0.1:8080/api/swagger-ui/index.html](http://127.0.0.1:8080/api/swagger-ui/index.html)
+> **Внимание!**
+> С версией spring 2.5.6 не работает swagger, openapi, поэтому версия spring-boot <b>2.7.5</b>
+
+Api-docs доступен по адресу [http://127.0.0.1:8780/api/v3/api-docs](http://127.0.0.1:8780/api/v3/api-docs)
+OpenApi/Swagger по адресу [http://127.0.0.1:8780/api/swagger-ui/index.html](http://127.0.0.1:8780/api/swagger-ui/index.html)
 
 Настройка путей в application.yaml
 ```yaml
