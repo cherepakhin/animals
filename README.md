@@ -43,7 +43,9 @@ animal>\dt
 С удаленного компьютера
 ````shell
 psql -U postgres -p 5432 -h 192.168.1.20
+# Подключение к базе animal
 psql>\c animal
+// Список таблиц
 animal>\dt
                  List of relations
  Schema |         Name          | Type  |  Owner   
