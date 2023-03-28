@@ -1,16 +1,11 @@
 package ru.perm.v.animals.dto;
 
-import ru.perm.v.animals.model.Country;
 
 public class CountryDto {
     private Long id = 0L;
     private String name = "";
 
     public CountryDto() {
-    }
-
-    public CountryDto(Country  country) {
-        this(country.getId(),country.getName());
     }
 
     public CountryDto(Long id, String name) {

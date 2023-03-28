@@ -1,6 +1,5 @@
 package ru.perm.v.animals.dto;
 
-import ru.perm.v.animals.model.Animal;
 
 public class AnimalDto {
 
@@ -10,11 +9,6 @@ public class AnimalDto {
     public AnimalDto(Long id, String name) {
         this.id = id;
         this.name = name;
-    }
-
-    public AnimalDto(Animal animal) {
-        this.id = animal.getId();
-        this.name = animal.getName();
     }
 
     public Long getId() {
