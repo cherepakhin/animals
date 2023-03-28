@@ -69,6 +69,18 @@ animal>\dt
 ....
 ````
 
+### Тестирование и запуск
+
+Unit тестирование из командной строки
+```shell
+mvn clean test
+```
+
+Запуск из командной строки
+```shell
+mvn spring-boot:run
+```
+
 ### Actuator
 
 Доступен по адресу http :8781/actuator/
