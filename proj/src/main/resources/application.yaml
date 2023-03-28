@@ -1,0 +1,60 @@
+spring:
+  main:
+    lazy-initialization: true
+  # Настройка для базы H2
+    #  spring.hibernate.hbm2ddl.auto=create-drop
+  dataSource:
+    url: jdbc:postgresql://192.168.1.20:5432/animal
+    username: ${PG_USER:postgres}
+    password: ${PG_PASSWORD:postgres}
+  flyway:
+    enabled: true
+    generate_statistics: true
+  jpa:
+    # Hibernate ddl auto (create, create-drop, validate, update)
+    #hibernate.ddl-auto: validate
+    #hibernate.ddl-auto: create
+    properties:
+      #      hibernate.show_sql: true
+      hibernate.format_sql: true
+      hibernate.enable_lazy_load_no_trans: true
+#      hibernate.use_sql_comments: true
+
+server:
+  servlet:
+    context-path: /api
+  port: ${API_PORT:8780}
+
+springdoc:
+  version: '@springdoc.version@'
+  swagger-ui:
+    display-request-duration: true
+    groups-order: DESC
+    operationsSorter: method
+    disable-swagger-default-url: true
+    use-root-path: true
+  show-actuator: true
+
+management:
+  health:
+    probes:
+      enabled: true
+  endpoint:
+    metrics:
+      enabled: true
+    prometheus:
+      enabled: true
+    health:
+      show-details: always
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+      base-path: "/actuator"
+  metrics:
+    export:
+      prometheus:
+        enabled: true
+  server:
+    port: 8781

@@ -1,0 +1,12 @@
+.idea/
+/log/
+
+*.iws
+*.iml
+*.zip
+target/
+.settings
+.classpath
+.project
+bin/
+ajcore.*
