@@ -1,9 +1,3 @@
-### Проведение тестирования RestAssured
-
-Проект состоит из двух частей:
-- сам сервис REST [/proj](proj/)
-- проект для Behave тестирования [/restassured-test](restassured-test/) 
-
 ## Animals
 
 Простой проект на java и с базой Postgres
@@ -23,6 +17,10 @@
 - Даты, Calendar
 - gradle
 - Kafka
+
+Проект состоит из двух частей:
+- сам сервис REST [/proj](proj/)
+- проект для Behave тестирования [/restassured-test](restassured-test/) 
 
 ### База данных
 
