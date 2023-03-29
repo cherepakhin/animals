@@ -143,9 +143,6 @@ Transfer-Encoding: chunked
 
 Использован RestAssured [https://github.com/rest-assured/rest-assured](https://github.com/rest-assured/rest-assured/wiki/GettingStarted)
 
-Проект с тестами [/restassured-test](https://github.com/cherepakhin/animals/restassured-test)
-
-
 ```shell
 restassured-test$ mvn clean test
 restassured-test$ allure serve target/surefire-reports/
