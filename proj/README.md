@@ -8,7 +8,7 @@
 - с подключением БД Postges (+)
 - Flyway (+)
 - Code coverage jacoco (+)
-- Behave тесты (jbehave, RestAssured)
+- Behave тесты (jbehave, RestAssured) (+)
 - кешем для REST
 - Упаковать в Docker
 - UUID
@@ -18,13 +18,17 @@
 - gradle
 - Kafka
 
+Проект состоит из двух частей:
+- сам сервис REST [/proj](proj/)
+- проект для Behave тестирования [/restassured-test](restassured-test/)
+
 ### База данных
 
 Инициализация БД
 
 Использован инструмент миграции [https://flywaydb.org](https://flywaydb.org)
 
-Если в application.yaml установлен 
+Если в application.yaml установлен
 ````yaml
 flyway:
     enabled: false
@@ -33,13 +37,13 @@ flyway:
 ````shell
 mvn flyway:migrate -Dflyway.user=postgres -Dflyway.password=postgres -Dflyway.url=jdbc:postgresql://localhost:5432/animal
 ````
-И не надо ОТДЕЛЬНО выполнять миграцию (mvn flyway:migrate ...), если 
+И не надо ОТДЕЛЬНО выполнять миграцию (mvn flyway:migrate ...), если
 ````yaml
 flyway:
     enabled: true
 ````
 
-### Работа с psql 
+### Работа с psql
 
 Из linux! Выполнять из консоли компа с postgres
 ````shell
@@ -69,15 +73,15 @@ animal>\dt
 ....
 ````
 
-### Проведение тестов
+### Проведение UNIT тестов
 Из каталога проекта, там где находится pom.xml, выполнить:
 ```shell
 cd proj
-mvn test 
+mvn clean test 
 ```
 
 ### Запуск
-Из каталога проекта, там где находится pom.xml, выполнить: 
+Из каталога проекта, там где находится pom.xml, выполнить:
 ```shell
 cd proj
 mvn spring-boot:run
@@ -108,7 +112,7 @@ springdoc:
 Использован jacoco. Отчет генерируется автоматически при сборке (mvn package) и результаты будут в папке
 [target/site/jacoco/index.html](./target/site/jacoco/index.html)
 
-![jacoco](doc/jacoco.png)
+![jacoco](./proj/doc/jacoco.png)
 
 ### Ручное тестирование REST
 
@@ -143,7 +147,13 @@ Transfer-Encoding: chunked
 
 Использован RestAssured [https://github.com/rest-assured/rest-assured](https://github.com/rest-assured/rest-assured/wiki/GettingStarted)
 
+Проект с тестами [https://github.com/cherepakhin/animals/tree/main/restassured-test](https://github.com/cherepakhin/animals/tree/main/restassured-test)
+
+Для проведения тестов и получения отчета в формате Allure из каталога проекта для тестов (там где файл pom.xml) выполнить
+
 ```shell
-restassured-test$ mvn clean test
-restassured-test$ allure serve target/surefire-reports/
+>cd restassured-test 
+restassured-test>mvn clean test
+restassured-test>allure serve target/surefire-reports/
 ```
+В браузере откроется страничка с результатами тестов ![результаты](restassured-test/doc/result_test.png "Result tests")
