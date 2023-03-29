@@ -1,7 +1,5 @@
 package ru.perm.v.animals.restassured;
 
-import groovy.transform.EqualsAndHashCode;
-
 import java.util.Objects;
 
 public class AnimalDto {
