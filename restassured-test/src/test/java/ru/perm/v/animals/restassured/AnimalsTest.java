@@ -10,7 +10,7 @@ import static ru.perm.v.animals.restassured.VARS.HOST;
  * Отчет о тестах в папке ./restassured-test/target/surefire-reports/index.html#
  */
 @Epic("REST API Regression Testing using JUnit4")
-@Feature("Verify CRUID Operations on Employee module")
+@Feature("Verify CRUID Operations on Animal")
 public class AnimalsTest {
 
     @Test
