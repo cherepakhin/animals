@@ -156,4 +156,5 @@ Transfer-Encoding: chunked
 restassured-test>mvn clean test
 restassured-test>allure serve target/surefire-reports/
 ```
-В браузере откроется страничка с результатами тестов ![результаты](restassured-test/doc/result_test.png "Result tests")
+
+В браузере откроется страничка с результатами тестов ![результаты](https://github.com/cherepakhin/animals/tree/main/restassured-test/doc)
