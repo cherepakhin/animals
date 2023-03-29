@@ -109,10 +109,10 @@ springdoc:
 
 ### Покрытие тестами
 
-Использован jacoco. Отчет генерируется автоматически при сборке (mvn package) и результаты будут в папке
+Использован jacoco. Отчет генерируется автоматически при сборке (mvn package) и результаты будут в папке 
 [target/site/jacoco/index.html](./target/site/jacoco/index.html)
 
-![jacoco](doc/jacoco.png)
+![jacoco](./proj/doc/jacoco.png)
 
 ### Ручное тестирование REST
 
