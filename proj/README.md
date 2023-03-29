@@ -143,7 +143,7 @@ Transfer-Encoding: chunked
 
 Использован RestAssured [https://github.com/rest-assured/rest-assured](https://github.com/rest-assured/rest-assured/wiki/GettingStarted)
 
-Проект с тестами [https://github.com/cherepakhin/animals-rest-assured-test](https://github.com/cherepakhin/animals-rest-assured-test)
+Проект с тестами [https://github.com/cherepakhin/animals/rest-assured-test](https://github.com/cherepakhin/animals/rest-assured-test)
 
 
 ```shell
