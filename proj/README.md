@@ -151,12 +151,14 @@ Transfer-Encoding: chunked
 
 Для проведения тестов:
 1. Запустить сервер
+
 ```shell
 >cd proj
->mvn spring-boot:run
+proj>mvn spring-boot:run
 ```
 
 2. Запуск тестов и получения отчета в **формате Allure** из каталога [проекта для тестов](https://github.com/cherepakhin/animals/restassured-test) выполнить
+
 ```shell
 >cd restassured-test 
 restassured-test>mvn clean test
