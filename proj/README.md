@@ -149,7 +149,14 @@ Transfer-Encoding: chunked
 
 Проект с тестами [https://github.com/cherepakhin/animals/restassured-test](https://github.com/cherepakhin/animals/restassured-test)
 
-Для проведения тестов и получения отчета в формате Allure из каталога [проекта для тестов](https://github.com/cherepakhin/animals/restassured-test) выполнить
+Для проведения тестов:
+1. Запустить сервер
+```shell
+>cd proj
+>mvn spring-boot:run
+```
+
+2. Запуск тестов и получения отчета в **формате Allure** из каталога [проекта для тестов](https://github.com/cherepakhin/animals/restassured-test) выполнить
 ```shell
 >cd restassured-test 
 restassured-test>mvn clean test
