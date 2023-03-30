@@ -143,26 +143,3 @@ Transfer-Encoding: chunked
 ]
 ````
 
-### Behave тестирование
-
-Использован RestAssured [https://github.com/rest-assured/rest-assured](https://github.com/rest-assured/rest-assured/wiki/GettingStarted)
-
-Проект с тестами [https://github.com/cherepakhin/animals/restassured-test](https://github.com/cherepakhin/animals/restassured-test)
-
-Для проведения тестов:
-1. Запустить сервер
-
-```shell
->cd proj
-proj>mvn spring-boot:run
-```
-
-2. Запуск тестов и получения отчета в **формате Allure** из каталога [проекта для тестов](https://github.com/cherepakhin/animals/restassured-test) выполнить
-
-```shell
->cd restassured-test 
-restassured-test>mvn clean test
-restassured-test>allure serve target/surefire-reports/
-```
-
-В браузере откроется страничка с результатами тестов ![результаты](https://github.com/cherepakhin/animals/restassured-test/doc)
