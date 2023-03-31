@@ -84,7 +84,7 @@ class AnimalRestControllerTest {
     @Test
     void getByNameIfExceptionInService() {
         Long ID=1L;
-        Mockito.when(animalService.getById(ID)).thenThrow(new EntityNotFoundException("ERROR1"));
+        Mockito.when(animalService.getById(ID)).thenThrow(new EntityNotFoundException());
         AnimalRestController animalRestController = new AnimalRestController(animalService);
         Assertions.assertThrows(BadRequestException.class,
                 () -> animalRestController.getById(ID));
