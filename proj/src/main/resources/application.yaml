@@ -24,7 +24,9 @@ server:
   servlet:
     context-path: /api
   port: ${API_PORT:8780}
-
+# For include message error to http response!!!
+  error:
+    include-message: always
 springdoc:
   version: '@springdoc.version@'
   swagger-ui:
