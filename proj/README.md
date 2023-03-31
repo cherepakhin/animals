@@ -9,6 +9,7 @@
 - Flyway (+)
 - Code coverage jacoco (+)
 - Behave тесты (jbehave, RestAssured) (+)
+- Обработка exception RestController
 - кешем для REST
 - Упаковать в Docker
 - UUID
