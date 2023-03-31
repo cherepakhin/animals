@@ -9,6 +9,8 @@ import org.springframework.test.web.servlet.MockMvc;
 import ru.perm.v.animals.model.AnimalDB;
 import ru.perm.v.animals.service.AnimalService;
 
+import java.util.List;
+
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -33,6 +35,27 @@ class AnimalRestControllerTest {
                 .andExpect(jsonPath("$.id").value(ID))
                 .andExpect(jsonPath("$.name").value(NAME))
                 .andExpect(status().isOk())
+                .andReturn();
+    }
+
+    @Test
+    void getAll() throws Exception {
+        Long ID_10 = 10L;
+        String NAME_10 = "ANIMAL_10";
+        AnimalDB animal_10 = new AnimalDB(ID_10, NAME_10);
+
+        Long ID_20 = 20L;
+        String NAME_20 = "ANIMAL_20";
+        AnimalDB animal_20 = new AnimalDB(ID_20, NAME_20);
+
+        Mockito.when(animalService.getAll()).thenReturn(List.of(animal_10, animal_20));
+
+        mockMvc.perform(get("/animal/"))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$[0].id").value(ID_10))
+                .andExpect(jsonPath("$[0].name").value(NAME_10))
+                .andExpect(jsonPath("$[1].id").value(ID_20))
+                .andExpect(jsonPath("$[1].name").value(NAME_20))
                 .andReturn();
     }
 }
