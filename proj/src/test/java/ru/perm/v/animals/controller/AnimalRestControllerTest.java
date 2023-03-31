@@ -1,16 +1,22 @@
 package ru.perm.v.animals.controller;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.http.HttpStatus;
 import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.MvcResult;
+import ru.perm.v.animals.controller.exception.BadRequestException;
 import ru.perm.v.animals.model.AnimalDB;
 import ru.perm.v.animals.service.AnimalService;
 
+import javax.persistence.EntityNotFoundException;
 import java.util.List;
 
+import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -21,6 +27,8 @@ class AnimalRestControllerTest {
     private MockMvc mockMvc;
     @MockBean
     AnimalService animalService;
+
+    AnimalRestController animalRestController;
 
     @Test
     void getById() throws Exception {
@@ -57,5 +65,28 @@ class AnimalRestControllerTest {
                 .andExpect(jsonPath("$[1].id").value(ID_20))
                 .andExpect(jsonPath("$[1].name").value(NAME_20))
                 .andReturn();
+    }
+
+    /**
+     * Тест WEB GET запроса
+     */
+    @Test
+    void notFoundException() throws Exception {
+        Long ID = 10L;
+        Mockito.when(animalService.getById(ID)).thenThrow(new EntityNotFoundException("ERROR1"));
+        mockMvc.perform(get("/animal/" + ID))
+                .andExpect(status().is(HttpStatus.BAD_REQUEST.value()));
+    }
+
+    /**
+     * Тест при Exception в сервисе
+     */
+    @Test
+    void getByNameIfExceptionInService() {
+        Long ID=1L;
+        Mockito.when(animalService.getById(ID)).thenThrow(new EntityNotFoundException("ERROR1"));
+        AnimalRestController animalRestController = new AnimalRestController(animalService);
+        Assertions.assertThrows(BadRequestException.class,
+                () -> animalRestController.getById(ID));
     }
 }

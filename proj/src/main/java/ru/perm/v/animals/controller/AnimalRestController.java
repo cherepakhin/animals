@@ -39,10 +39,9 @@ public class AnimalRestController {
         log.info("get /animal/" + id);
         try {
             AnimalDB animal = animalService.getById(id);
-            AnimalDto dto = new AnimalDto(animal.getId(), animal.getName());
-            return dto;
+            return new AnimalDto(animal.getId(), animal.getName());
         } catch (Exception e) {
-            throw new BadRequestException(String.format("Animal not found id=%d", id));
+            throw new BadRequestException(String.format("Animal not found id=%d. (Exception message: %s)", id, e.getMessage()));
         }
     }
 }
