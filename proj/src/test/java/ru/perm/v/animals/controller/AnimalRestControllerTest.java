@@ -26,8 +26,6 @@ class AnimalRestControllerTest {
     @MockBean
     AnimalService animalService;
 
-    AnimalRestController animalRestController;
-
     @Test
     void getById() throws Exception {
         Long ID = 10L;
