@@ -1,6 +1,7 @@
 package ru.perm.v.animals.restassured;
 
 import io.qameta.allure.*;
+import io.qameta.allure.junit4.DisplayName;
 import org.testng.annotations.Test;
 
 import static io.restassured.RestAssured.given;
@@ -14,6 +15,7 @@ import static ru.perm.v.animals.restassured.VARS.HOST;
 public class AnimalsTest {
 
     @Test
+    @DisplayName("Animal GET ID Request")
     @Story("Animal GET ID Request")
     @Severity(SeverityLevel.NORMAL)
     @Description("Test Description : Verify the HTTP answer of animal id=1 is status=200")
