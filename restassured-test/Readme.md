@@ -6,5 +6,5 @@
 
 ```shell
 restassured-test$ mvn clean test
-restassured-test$ allure serve target/surefire-reports/
+restassured-test$ ./allure serve target/surefire-reports/
 ```
