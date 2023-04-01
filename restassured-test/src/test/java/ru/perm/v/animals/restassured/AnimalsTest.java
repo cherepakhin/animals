@@ -32,4 +32,13 @@ public class AnimalsTest {
         AnimalDto receivedDto = given().when().get(HOST + "1").andReturn().as(AnimalDto.class);
         assert example.equals(receivedDto);
     }
+
+    @Test
+    @DisplayName("Show failed Animal GET ID Request")
+    @Story("Animal GET ID Request")
+    @Severity(SeverityLevel.NORMAL)
+    @Description("Test Description : Show failed test")
+    public void getId_1andStatusCode400() {
+        given().when().get(HOST + "1").then().statusCode(400);
+    }
 }
