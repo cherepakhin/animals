@@ -1,5 +1,6 @@
 package ru.perm.v.animals.dto;
 
+import java.util.Objects;
 
 public class AnimalDto {
 
@@ -25,5 +26,18 @@ public class AnimalDto {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        AnimalDto animalDto = (AnimalDto) o;
+        return id.equals(animalDto.id) && name.equals(animalDto.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name);
     }
 }
