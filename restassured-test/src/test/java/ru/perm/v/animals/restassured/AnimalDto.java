@@ -2,6 +2,7 @@ package ru.perm.v.animals.restassured;
 
 import java.util.Objects;
 
+//TODO: Перенести в библиотеку
 public class AnimalDto {
 
     private Long id = 0L;

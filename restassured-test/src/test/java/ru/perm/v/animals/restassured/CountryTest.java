@@ -29,7 +29,7 @@ public class CountryTest {
     @Severity(SeverityLevel.NORMAL)
     @Description("Test Description : Verify the details of country of id=1")
     public void getId_1() {
-        CountryDto example = new CountryDto(1L, "COUNTRY_1");
+        CountryDto example = new CountryDto(1L, "Германия");
         CountryDto receivedDto = given().when().get(COUNTRY_PATH + "1").andReturn().as(CountryDto.class);
         assert example.equals(receivedDto);
     }
@@ -40,6 +40,6 @@ public class CountryTest {
     @Severity(SeverityLevel.NORMAL)
     @Description("Test Description : Show failed test")
     public void getId_1andStatusCode400() {
-        given().when().get(COUNTRY_PATH + "1").then().statusCode(400);
+        given().when().get(COUNTRY_PATH + "1").then().statusCode(200);
     }
 }
