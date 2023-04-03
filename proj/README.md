@@ -46,7 +46,7 @@ flyway:
 
 ### Работа с psql
 
-Из linux! Выполнять из консоли компа с postgres
+Из linux! Выполнять из консоли компьютера с postgres
 ````shell
 sudo -u postgres psql
 psql>\c animal
