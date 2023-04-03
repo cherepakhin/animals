@@ -95,3 +95,7 @@ springdoc:
 [target/site/jacoco/index.html](./target/site/jacoco/index.html)
 
 ![jacoco](doc/jacoco.png)
+
+### Тестирование REST
+
+Проект с тестами RestAssured [https://github.com/cherepakhin/animals-rest-assured-test](https://github.com/cherepakhin/animals-rest-assured-test)
