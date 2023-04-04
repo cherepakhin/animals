@@ -81,6 +81,12 @@ animal>\dt
 ....
 ````
 
+### Запуск проекта
+
+````shell
+mvn clean spring-boot:run
+````
+
 ### Actuator
 
 Доступен по адресу http :8781/actuator/
