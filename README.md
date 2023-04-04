@@ -20,6 +20,7 @@
 - Kafka
 - Grafana
 - Prometheus
+- Различные SQL запросы
 
 ### База данных
 
