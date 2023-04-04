@@ -17,6 +17,8 @@
 - Behave тесты (jbehave, RestAssured)
 - gradle
 - Kafka
+- Grafana
+- Prometheus
 
 ### База данных
 
