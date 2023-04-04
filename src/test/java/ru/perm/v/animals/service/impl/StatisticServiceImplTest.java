@@ -24,19 +24,19 @@ class StatisticServiceImplTest {
 
     @Test
     void findByCountryId() {
-        Long COUNTRY_ID = 1L;
+        Long COUNTRY_ID = 100L;
         List<StatisticDB> stat = statisticService.findByCountryId(COUNTRY_ID);
         assertEquals(3, stat.size());
     }
 
     @Test
     void findByCountryIdAndAnimalId() {
-        Long COUNTRY_ID = 1L;
+        Long COUNTRY_ID = 100L;
         Long ANIMAL_ID = 2L;
         List<StatisticDB> stat = statisticService.findByCountryIdAndAnimalId(COUNTRY_ID, ANIMAL_ID);
         assertEquals(1, stat.size());
         assertEquals(COUNTRY_ID, stat.get(0).getCountry().getId());
         assertEquals(ANIMAL_ID, stat.get(0).getAnimal().getId());
-        assertEquals(50, stat.get(0).getQty());
+        assertEquals(20, stat.get(0).getQty());
     }
 }
