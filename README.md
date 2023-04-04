@@ -9,7 +9,6 @@
 - Flyway (+)
 - Code coverage jacoco (+)
 - Авторизация (https://automationqahub.com/how-to-build-rest-assured-framework-step-by-step/)
-- Передача переменных через Context (https://www.codingninjas.com/codestudio/library/rest-assured--how-to-pass-value-from-one-api-to-another-api-using-testng--itestcontext)
 - кешем для REST
 - Упаковать в Docker
 - UUID
@@ -25,8 +24,10 @@
 - Json очередность, включение/выключение @JsonInclude(JsonInclude.Include.NON_NULL)
   @JsonPropertyOrder({ "country", "display_name", "email", "explicit_content", "external_urls", "followers", "href", "id",
   "images", "product", "type", "uri" }) https://automationqahub.com/how-to-build-rest-assured-framework-step-by-step/
-
-
+- RestAssured
+  - Передача переменных через Context (https://www.codingninjas.com/codestudio/library/rest-assured--how-to-pass-value-from-one-api-to-another-api-using-testng--itestcontext)
+  - Json Schema Validation (https://github.com/rest-assured/rest-assured/wiki/Usage)
+- Перенос на Kotlin и использование RestAssured в Kotlin (https://habr.com/ru/articles/726064/)[https://habr.com/ru/articles/726064/]
 ### База данных
 
 Инициализация БД
