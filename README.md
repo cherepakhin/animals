@@ -8,6 +8,7 @@
 - с подключением БД Postges (+)
 - Flyway (+)
 - Code coverage jacoco (+)
+- Авторизация
 - кешем для REST
 - Упаковать в Docker
 - UUID
