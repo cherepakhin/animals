@@ -1,8 +1,11 @@
 package ru.perm.v.animals.dto;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import java.util.Objects;
 
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class CountryDto {
     private Long id = 0L;
     private String name = "";

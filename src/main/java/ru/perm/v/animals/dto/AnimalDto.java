@@ -1,7 +1,10 @@
 package ru.perm.v.animals.dto;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import java.util.Objects;
 
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class AnimalDto {
 
     private Long id = 0L;
