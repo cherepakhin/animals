@@ -4,11 +4,11 @@ spring:
   # Настройка для базы H2
     #  spring.hibernate.hbm2ddl.auto=create-drop
   dataSource:
-    url: jdbc:postgresql://192.168.1.20:5432/animal
+    url: jdbc:postgresql://localhost:5432/animal
     username: ${PG_USER:postgres}
     password: ${PG_PASSWORD:postgres}
   flyway:
-    enabled: true
+    enabled: false
     generate_statistics: true
   jpa:
     # Hibernate ddl auto (create, create-drop, validate, update)
