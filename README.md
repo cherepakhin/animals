@@ -8,7 +8,7 @@
 - с подключением БД Postges (+)
 - Flyway (+)
 - Code coverage jacoco (+)
-- Авторизация (https://automationqahub.com/how-to-build-rest-assured-framework-step-by-step/)
+- [Авторизация](https://automationqahub.com/how-to-build-rest-assured-framework-step-by-step/)
 - кешем для REST
 - Упаковать в Docker
 - UUID
