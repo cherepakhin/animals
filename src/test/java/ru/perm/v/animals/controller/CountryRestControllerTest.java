@@ -3,9 +3,7 @@ package ru.perm.v.animals.controller;
 import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
 import org.mockito.Mockito;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
-import org.springframework.test.web.servlet.MockMvc;
 import ru.perm.v.animals.dto.CountryDto;
 import ru.perm.v.animals.model.CountryDB;
 import ru.perm.v.animals.service.CountryService;
@@ -16,8 +14,6 @@ import static org.mockito.Mockito.mock;
 
 @WebMvcTest(CountryRestController.class)
 public class CountryRestControllerTest {
-    @Autowired
-    private MockMvc mockMvc;
 
     @Test
     public void getById() {

@@ -22,6 +22,6 @@ public class CountryServiceImpl implements CountryService {
     public CountryDB getById(Long id) {
         List<CountryDB> countries = countryRepository.findAll();
         System.out.println(countries);
-        return countryRepository.getOne(id);
+        return countryRepository.getById(id);
     }
 }
