@@ -11,7 +11,7 @@
     </parent>
     <groupId>ru.perm.v.animals</groupId>
     <artifactId>demo</artifactId>
-    <version>0.0.3</version>
+    <version>0.0.4</version>
     <name>animals</name>
     <description>Nest Job</description>
     <properties>
@@ -55,8 +55,8 @@
 <!-- run for deploy: mvn deploy-->
     <distributionManagement>
         <repository>
-            <id>ru.perm.v</id>
-            <name>Release Repository</name>
+            <id>ru.perm.v</id> <!-- by this id take name/pass from ~/.m2/settings.xml-->
+            <name>My Repository</name>
             <url>http://192.168.1.20:8881/repository/ru.perm.v/</url>
         </repository>
     </distributionManagement>
