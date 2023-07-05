@@ -51,6 +51,8 @@
             </plugin>
         </plugins>
     </build>
+
+<!-- run for deploy: mvn deploy-->
     <distributionManagement>
         <repository>
             <id>ru.perm.v</id>
