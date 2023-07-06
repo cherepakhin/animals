@@ -127,3 +127,9 @@ springdoc:
 ````shell
 mvn deploy
 ````
+
+### Удаление внешней ветки git (master)
+
+````shell
+$ git push origin -d master
+````
