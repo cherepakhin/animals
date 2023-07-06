@@ -119,3 +119,11 @@ springdoc:
 ### Тестирование REST
 
 Проект с тестами RestAssured [https://github.com/cherepakhin/animals-rest-assured-test](https://github.com/cherepakhin/animals-rest-assured-test)
+
+### CI/CD
+
+У меня развернут Jenkins и личный Sonartype Nexus репозиторий [http://192.168.1.20:8881/](http://192.168.1.20:8881/) и на [v.perm.ru:8881](v.perm.ru:8881)
+
+````shell
+mvn deploy
+````
