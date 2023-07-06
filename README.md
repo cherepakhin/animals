@@ -122,7 +122,9 @@ springdoc:
 
 ### CI/CD
 
-У меня развернут Jenkins и личный Sonartype Nexus репозиторий [http://192.168.1.20:8881/](http://192.168.1.20:8881/) и на [v.perm.ru:8881](v.perm.ru:8881)
+Развернут личный Sonartype Nexus репозиторий [http://192.168.1.20:8881/](http://192.168.1.20:8881/) и на [v.perm.ru:8881](v.perm.ru:8881)
+
+![SonatypeNexusRepository](doc/SonatypeNexusRepository.png)
 
 ````shell
 mvn deploy
