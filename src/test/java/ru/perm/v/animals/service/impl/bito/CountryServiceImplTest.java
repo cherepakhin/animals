@@ -1,6 +1,5 @@
 package ru.perm.v.animals.service.impl.bito;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.junit.Assert;
@@ -29,10 +28,11 @@ public class CountryServiceImplTest {
 
     @Test
     public void getAll() {
-        List<CountryDB> expectedCountries = new ArrayList<>();
-        expectedCountries.add(new CountryDB(1L, "Russia"));
-        expectedCountries.add(new CountryDB(2L, "USA"));
-        expectedCountries.add(new CountryDB(3L, "China"));
+        List<CountryDB> expectedCountries = List.of(
+            new CountryDB(1L, "Russia"),
+            new CountryDB(2L, "USA"),
+            new CountryDB(3L, "China")
+        );
         Mockito.when(countryRepository.findAll()).thenReturn(expectedCountries);
         CountryService countryService = new CountryServiceImpl(countryRepository);
         List<CountryDB> actualCountries = countryService.getAll();
