@@ -10,10 +10,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>ru.perm.v.animals</groupId>
-    <artifactId>demo</artifactId>
+    <artifactId>proj</artifactId>
     <version>0.0.4</version>
     <name>animals</name>
-    <description>Nest Job</description>
+    <description>Preparation for a typical java project</description>
     <properties>
         <java.version>11</java.version>
     </properties>
