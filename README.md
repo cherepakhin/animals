@@ -132,6 +132,8 @@ mvn deploy
 
 ### Удаление внешней ветки git (master)
 
+Основная ветка <b>main</b>
+
 ````shell
 $ git push origin -d master
 ````
