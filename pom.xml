@@ -6,7 +6,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>ru.perm.v.animals</groupId>
     <artifactId>animals</artifactId>
-    <version>0.0.5</version>
+    <version>0.0.6</version>
     <name>animals</name>
     <description>Animals</description>
 
