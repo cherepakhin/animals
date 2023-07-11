@@ -20,7 +20,7 @@ public class J8Test {
         Operationable operation = (x, y) -> x + y;
         // а так в ДАННОМ случае проще
         operation = Integer::sum;
-        assertEquals(5, operation.calculate(2, 3));
+        assertEquals(6, operation.calculate(2, 3));
     }
 
     @Test
