@@ -122,7 +122,9 @@ springdoc:
 
 ### CI/CD
 
-Развернут личный Sonartype Nexus репозиторий [http://192.168.1.20:8881/](http://192.168.1.20:8881/) и на [v.perm.ru:8881](v.perm.ru:8881)
+__Nexus__<br/>
+
+Развернут личный Sonartype Nexus репозиторий [http://192.168.1.20:8881/](http://192.168.1.20:8881/)
 
 ![SonatypeNexusRepository](doc/SonatypeNexusRepository.png)
 
@@ -130,7 +132,15 @@ springdoc:
 mvn deploy
 ````
 
+__Jenkins__
+
+Развернут личный Jenkins [http://192.168.1.20:8880/](http://192.168.1.20:8880/)
+
+![Jenkins](doc/jenkins.png)
+
 ### Удаление внешней ветки git (master)
+
+Основная ветка <b>main</b>
 
 ````shell
 $ git push origin -d master
