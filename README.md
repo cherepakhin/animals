@@ -147,14 +147,6 @@ __Jenkins__
 
 ![Jenkins](doc/jenkins.png)
 
-### Удаление внешней ветки git (master)
-
-Основная ветка <b>main</b>
-
-````shell
-$ git push origin -d master
-````
-
 ### Настройка Jenkins
 
 Выбран способ сборки Pipeline/Pipeline script. Ниже настройка Pipeline:
@@ -189,3 +181,12 @@ pipeline {
 Результаты сборки:
 
 ![Jenkins](doc/jenkins_pipeline_result.png)
+
+
+### Удаление внешней ветки git (master)
+
+Основная ветка <b>main</b>, не <b>master</b>
+
+````shell
+$ git push origin -d master
+````
