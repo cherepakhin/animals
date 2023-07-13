@@ -8,6 +8,7 @@
 - с подключением БД Postges (+)
 - Flyway (+)
 - Code coverage jacoco (+)
+- CI/CD (+)
 - [Авторизация](https://automationqahub.com/how-to-build-rest-assured-framework-step-by-step/)
 - кешем для REST
 - Упаковать в Docker
