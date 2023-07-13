@@ -16,7 +16,7 @@
 - Очереди
 - REST клиент для внешнего сервиса
 - Даты, Calendar
-- Behave тесты (jbehave, RestAssured)
+- Behave тесты (jbehave, RestAssured) (+)
 - gradle
 - Kafka
 - Grafana
