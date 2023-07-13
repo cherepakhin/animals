@@ -20,8 +20,8 @@ class CountryServiceImplTest {
         List<CountryDB> countries = countryService.getAll();
         assertEquals(2, countries.size());
 
-        CountryDB country0 = new CountryDB(100L, "Россия");
-        assertEquals(100L, countries.get(0).getId());
+        CountryDB country0 = new CountryDB(0L, "Россия");
+        assertEquals(0L, countries.get(0).getId());
         assertEquals(country0, countries.get(0));
     }
 
