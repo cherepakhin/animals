@@ -130,6 +130,8 @@ springdoc:
 
 ### CI/CD
 
+Установка и настройка собственного CI/CD описана в [http://v.perm.ru/main/index.php/50-organizatsiya-sobstvennogo-ci-cd](http://v.perm.ru/main/index.php/50-organizatsiya-sobstvennogo-ci-cd)
+
 __Nexus__<br/>
 
 Развернут личный Sonartype Nexus репозиторий [http://192.168.1.20:8881/](http://192.168.1.20:8881/)
