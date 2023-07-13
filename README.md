@@ -93,6 +93,8 @@ mvn clean spring-boot:run
 
 Доступен по адресу http :8781/actuator/
 
+![actuator](doc/actuator.png)
+
 ### OpenApi/Swagger
 
 > **Внимание!**
