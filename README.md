@@ -95,13 +95,16 @@ mvn clean spring-boot:run
 
 ![actuator](doc/actuator.png)
 
-### OpenApi/Swagger
+### OpenApi
 
 > **Внимание!**
 > С версией spring 2.5.6 не работает swagger, openapi, поэтому версия spring-boot <b>2.7.5</b>
 
 Api-docs доступен по адресу [http://127.0.0.1:8780/api/v3/api-docs](http://127.0.0.1:8780/api/v3/api-docs)
 
+![api-docs](doc/api-docs.png)
+
+### Swagger
 OpenApi/Swagger по адресу [http://127.0.0.1:8780/api/swagger-ui/index.html](http://127.0.0.1:8780/api/swagger-ui/index.html)
 
 Настройка путей в application.yaml
@@ -110,6 +113,8 @@ springdoc:
   api-docs:
     path: /api-docs
 ```
+
+![swagger](doc/swagger.png)
 
 ### Покрытие тестами
 
