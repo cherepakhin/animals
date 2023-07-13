@@ -173,4 +173,10 @@ pipeline {
 }
 ````
 
+Настройка pipeline:
+
 ![Jenkins](doc/jenkins_pipeline.png)
+
+Результаты сборки:
+
+![Jenkins](doc/jenkins_pipeline_result.png)
