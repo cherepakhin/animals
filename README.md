@@ -135,6 +135,8 @@ __Nexus__<br/>
 
 ![SonatypeNexusRepository](doc/SonatypeNexusRepository.png)
 
+Deploy в репозиторий:
+
 ````shell
 mvn deploy
 ````
