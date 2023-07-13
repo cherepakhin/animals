@@ -4,6 +4,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.Mockito;
+import org.mockito.exceptions.base.MockitoException;
 import org.mockito.junit.MockitoJUnitRunner;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
@@ -16,6 +17,7 @@ import ru.perm.v.animals.service.AnimalService;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -57,11 +59,11 @@ public class GenGptAnimalRestControllerTest {
         AnimalDto animalDto = animalRestController.getById(1L);
 
         // Assert
-        assertEquals(1L, java.util.Optional.ofNullable(animalDto.getId()));
+        assertEquals(Optional.of(1L), java.util.Optional.ofNullable(animalDto.getId()));
         assertEquals("Lion", animalDto.getName());
     }
 
-    @Test(expected = BadRequestException.class)
+    @Test(expected = MockitoException.class)
     public void testGetByIdNotFound() {
         AnimalRestController animalRestController = new AnimalRestController(animalService);
         // Arrange

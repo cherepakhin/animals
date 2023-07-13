@@ -1,23 +1,27 @@
-pipeline {
-    agent any
-    tools {
-        maven 'Maven 3.6.0'
-        jdk 'jdk8'
+stage("Prepare container") {
+  agent {
+    docker {
+      image 'openjdk:11.0.5-slim'
+      args '-v $HOME/.m2:/root/.m2'
     }
-    stages {
-        stage ('Initialize') {
-            steps {
-                sh '''
-                    echo "PATH = ${PATH}"
-                    echo "M2_HOME = ${M2_HOME}"
-                '''
-            }
-        }
-
-        stage ('Build') {
-            steps {
-                echo 'This is a minimal pipeline.'
-            }
-        }
+  }
+  stages {
+    stage('Build') {
+      steps {
+        checkout scm
+        sh './mvnw compile'
+      }
     }
+    stage('Test') {
+      steps {
+        sh './mvnw test'
+        junit '**/target/surefire-reports/TEST-*.xml'
+      }
+    }
+    stage('Package') {
+      steps {
+        sh './mvnw package -DskipTests'
+      }
+    }
+  }
 }

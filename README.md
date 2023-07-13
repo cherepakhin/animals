@@ -145,3 +145,32 @@ __Jenkins__
 ````shell
 $ git push origin -d master
 ````
+
+### Настройка Jenkins
+
+Выбран способ сборки Pipeline/Pipeline script. Ниже настройка Pipeline:
+````shell
+pipeline {
+    agent any
+    stages {
+        stage('test') {
+            steps {
+                // Get some code from a GitHub repository
+                git url: 'https://github.com/cherepakhin/animals.git', branch: 'dev'
+                
+                sh "mvn test"
+            }
+        }
+        stage('package') {
+            steps {
+                // Get some code from a GitHub repository
+                git url: 'https://github.com/cherepakhin/animals.git', branch: 'dev'
+                
+                sh "mvn package"
+            }
+        }
+    }
+}
+````
+
+![Jenkins](doc/jenkins_pipeline.png)
