@@ -6,7 +6,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>ru.perm.v.animals</groupId>
     <artifactId>animals</artifactId>
-    <version>0.0.9</version>
+    <version>0.0.10</version>
     <name>animals</name>
     <description>Animals</description>
 
@@ -125,7 +125,7 @@
             </plugin>
         </plugins>
     </build>
-    <!-- run for deploy: mvn deploy-->
+    <!-- run for deploy to NEXUS: mvn deploy-->
     <distributionManagement>
         <repository>
             <id>ru.perm.v</id> <!-- by this id take name/pass from ~/.m2/settings.xml-->
