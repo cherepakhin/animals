@@ -138,10 +138,46 @@ __Nexus__<br/>
 
 ![SonatypeNexusRepository](doc/SonatypeNexusRepository.png)
 
-Deploy в репозиторий:
+Варианты deploy в NEXUS репозиторий:
 
+_1) Обычный deploy:_
 ````shell
 mvn deploy
+````
+
+Должна быть настройка:
+В /.m2/settings.xml указаны имя/пароль для nexus
+````xml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+  <servers>
+    <server>
+      <id>ru.perm.v</id>
+      <username>admin</username>
+      <password>pass</password>
+    </server>
+  </servers>
+</settings>
+````
+
+В проекте в pom.xml
+
+````xml
+<distributionManagement>
+  <repository>
+      <id>ru.perm.v</id> <!-- !!!!! by this id take name/pass from ~/.m2/settings.xml-->
+      <name>My Repository</name>
+      <url>http://192.168.1.20:8081/repository/ru.perm.v/</url>
+  </repository>
+</distributionManagement>
+````
+
+_2) Для тестов можно так:_ 
+
+````shell
+ mvn deploy -Dmaven.deploy.username=user -Dmaven.deploy.password=pass
 ````
 
 __Jenkins__
