@@ -195,18 +195,20 @@ pipeline {
     stages {
         stage('test') {
             steps {
-                // Get some code from a GitHub repository
                 git url: 'https://github.com/cherepakhin/animals.git', branch: 'dev'
-                
                 sh "mvn test"
             }
         }
         stage('package') {
             steps {
-                // Get some code from a GitHub repository
                 git url: 'https://github.com/cherepakhin/animals.git', branch: 'dev'
-                
                 sh "mvn package"
+            }
+        }
+        stage('deploy') {
+            steps {
+                git url: 'https://github.com/cherepakhin/animals.git', branch: 'dev'
+                sh "mvn deploy"
             }
         }
     }
