@@ -12,12 +12,14 @@ public class AnimalDto {
 
     public static String staticString = ""; // идиотский вопрос с собеса см. ForIdiotStaticTest
 
+    // еще и в конструктор засунули, тем самым ОБЯЗЫВАЮТ менять и ломать ВСЮ логику
     public AnimalDto(Long id, String name, String s) {
         staticString = s;
         this.id = id;
         this.name = name;
     }
 
+    // Правильный конструктор
     public AnimalDto(Long id, String name) {
         this.id = id;
         this.name = name;

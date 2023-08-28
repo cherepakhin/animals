@@ -20,6 +20,7 @@ public class ForIdiotStaticTest {
         assertEquals("STATIC2", AnimalDto.staticString);
 
         animalDto2.staticString = "ЧУШЬ";
+        assertEquals("ЧУШЬ", animalDto1.staticString);
         assertEquals("ЧУШЬ", animalDto2.staticString);
         assertEquals("ЧУШЬ", AnimalDto.staticString);
     }
