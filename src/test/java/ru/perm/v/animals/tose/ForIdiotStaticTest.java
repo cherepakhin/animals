@@ -5,7 +5,7 @@ import ru.perm.v.animals.dto.AnimalDto;
 
 import static org.junit.Assert.assertEquals;
 
-public class IdiotStaticTest {
+public class ForIdiotStaticTest {
 
     @Test
     void staticTest() {

@@ -10,7 +10,7 @@ public class AnimalDto {
     private Long id = 0L;
     private String name = "";
 
-    public static String staticString = "";
+    public static String staticString = ""; // идиотский вопрос с собеса см. ForIdiotStaticTest
 
     public AnimalDto(Long id, String name, String s) {
         staticString = s;
