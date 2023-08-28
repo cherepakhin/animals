@@ -9,6 +9,7 @@ public class AnimalDto {
 
     private Long id = 0L;
     private String name = "";
+
     public static String staticString = "";
 
     public AnimalDto(Long id, String name, String s) {
