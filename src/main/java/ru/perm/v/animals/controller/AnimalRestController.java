@@ -24,6 +24,7 @@ public class AnimalRestController {
 
     private final AnimalService animalService;
 
+    // write test for getAll
     @GetMapping("/")
     public List<AnimalDto> getAll() {
         log.info("get /animal/getAll");

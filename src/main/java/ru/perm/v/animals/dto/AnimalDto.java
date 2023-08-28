@@ -9,6 +9,13 @@ public class AnimalDto {
 
     private Long id = 0L;
     private String name = "";
+    public static String staticString = "";
+
+    public AnimalDto(Long id, String name, String s) {
+        staticString = s;
+        this.id = id;
+        this.name = name;
+    }
 
     public AnimalDto(Long id, String name) {
         this.id = id;
@@ -34,9 +41,9 @@ public class AnimalDto {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (!(o instanceof AnimalDto)) return false;
         AnimalDto animalDto = (AnimalDto) o;
-        return id.equals(animalDto.id) && name.equals(animalDto.name);
+        return Objects.equals(id, animalDto.id) && Objects.equals(name, animalDto.name);
     }
 
     @Override
