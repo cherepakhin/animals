@@ -10,7 +10,6 @@ import ru.perm.v.animals.service.AnimalService;
 @Service
 public class AnimalServiceImpl implements AnimalService {
 
-    @Autowired
     private AnimalRepository animalRepository;
 
     @Override
