@@ -11,7 +11,7 @@ import ru.perm.v.animals.model.Animal;
 
 @RestController
 @RequestMapping("/statistic")
-@Slf4j
+// @Slf4j not used
 @Validated
 @AllArgsConstructor
 public class AnimalsController {

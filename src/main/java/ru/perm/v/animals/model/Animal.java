@@ -27,4 +27,12 @@ public class Animal {
     public void setName(String name) {
         this.name = name;
     }
+
+    public Animal() {
+    }
+
+    public Animal(Long id, String name) {
+        this.id = id;
+        this.name = name;
+    }
 }
