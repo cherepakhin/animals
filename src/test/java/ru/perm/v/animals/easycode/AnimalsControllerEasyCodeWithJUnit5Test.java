@@ -18,7 +18,7 @@ import static org.mockito.Mockito.when;
 
 class AnimalsControllerEasyCodeWithJUnit5Test {
 
-    // PROMPT:
+// PROMPT:
 // write junit5 test for AnimalsController.java
 //    @RequestMapping("/statistic")
 //// @Slf4j not used
@@ -50,7 +50,7 @@ class AnimalsControllerEasyCodeWithJUnit5Test {
     }
 
     @Test
-    public void testGetAll() {
+    void testGetAll() {
         // Arrange
         List<Animal> animals = Arrays.asList(
                 new Animal(1L, "Cat"),
