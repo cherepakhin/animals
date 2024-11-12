@@ -352,6 +352,12 @@ sudo -u vasi psql --dbname=animal --host=192.168.1.20
 ````shell
 mvn clean spring-boot:run
 ````
+или после сборки:
+
+````shell
+mvn package
+java -jar target/animals-0.0.20.jar
+````
 
 ### Actuator
 
