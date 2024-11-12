@@ -149,7 +149,7 @@ springdoc:
 
 __Nexus__<br/>
 
-Развернут личный Sonartype Nexus репозиторий [http://192.168.1.20:8881/](http://192.168.1.20:8881/)
+Развернут личный Sonartype Nexus репозиторий [http://192.168.1.20:8081/](http://192.168.1.20:8081/)
 
 ![SonatypeNexusRepository](doc/SonatypeNexusRepository.png)
 
